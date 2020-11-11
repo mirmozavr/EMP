@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">First Name</label>
+        <br>
+        <input type="text" name="first_name" placeholder="First Name" class="form-control"
+               id="formGroupExampleInput">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Last Name</label>
+        <br>
+        <input type="text" name="last_name" placeholder="Last Name" class="form-control"
+               id="formGroupExampleInput1">
+    </div>
+    <br>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Info</label>
+        <br>
+        <textarea name="info" placeholder="Info" class="form-control"
+                  id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <br>
+    <p>Upload your photo</p>
+    <p><input type="file" name="photo" multiple accept="image/jpeg,image/png">
+    </p>
+
+    <button class="btn btn-info btn-sm">Submit</button>
+
+</form>
+<p>Current info</p>
+<p>{{ context.first_name }}</p>
+<p>{{ context.last_name }}</p>
+<p>{{ context.info }}</p>
+</body>
+</html>
