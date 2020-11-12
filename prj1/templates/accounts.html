@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Accounts</title>
+</head>
+<body>
+<h5>page available for all logged users: bad</h5>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Login</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+    </thead>
+    {% for account in accounts %}
+        <tr>
+            <td>{{ account.id }}</td>
+            <td>{{ account.username }}</td>
+            <td>{{ account.last_name }}</td>
+            <td>{{ account.first_name }}</td>
+        </tr>
+    {% endfor %}
+</table>
+<br>
+<a href ="/">Home</a>
+
+</body>
+</html>

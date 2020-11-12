@@ -11,7 +11,7 @@ def index(request):
 
 @login_required
 def status(request):
-    return HttpResponse('Some status OK text<a href ="/">Home</a> ')
+    return HttpResponse('OK. Logged in. <a href ="/">Home</a>')
 
 
 def auth(request):
@@ -37,8 +37,13 @@ def profile(request):
 
     first_name = current_user.first_name
     last_name = current_user.last_name
-    # info = current_user.info  # fix this field
+    # info = current_user.info  # fix this field, maybe add Profile class
     print(first_name, last_name, current_user)
 
-    return render(request, 'profile.html', {'context': {'first_name': first_name,
-                                             'last_name': last_name}})
+    # return render(request, 'profile.html', {'context': {'first_name': first_name, 'last_name': last_name}})
+    return render(request, 'profile.html', {'profile': current_user})
+
+@login_required
+def accounts(request):
+    accounts_sorted = User.objects.all().order_by('id')
+    return render(request, 'accounts.html', {'accounts': accounts_sorted})

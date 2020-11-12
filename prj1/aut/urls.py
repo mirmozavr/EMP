@@ -8,6 +8,7 @@ urlpatterns = [
     url('', include('social_django.urls', namespace='social')),
     path('auth/', views.auth),
     path('accounts/profile/', views.profile),
+    path('accounts/', views.accounts),
     path('logout/', views.logout_view),
 ]
 

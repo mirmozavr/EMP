@@ -37,9 +37,11 @@
     <button class="btn btn-info btn-sm">Submit</button>
 
 </form>
-<p>Current info</p>
-<p>{{ context.first_name }}</p>
-<p>{{ context.last_name }}</p>
-<p>{{ context.info }}</p>
+<p>Current user info</p>
+<p>Login: {{ profile.username }}</p>
+<p>First name: {{ profile.first_name }}</p>
+<p>Last name: {{ profile.last_name }}</p>
+<p>{{ profile.info }}</p>
+<a href ="/">Home</a>
 </body>
 </html>
